@@ -19,7 +19,9 @@ console.log("\n\x1b[31m\x1b[1m** Accessing the Development Server **\x1b[0m\n\nT
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [svelte()],
-  base: base,
+  base: process.env.GITHUB_ACTIONS === "true"
+  ? "/metallica-favplaylist/"
+  : base,
   server: {
     allowedHosts: allowed_hosts,
   },
