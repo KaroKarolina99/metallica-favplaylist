@@ -6,4 +6,5 @@ type Track = {
   artist: string,
   album: string,
   length: string,
+  image: string;
 };
